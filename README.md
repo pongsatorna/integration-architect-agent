@@ -5,7 +5,7 @@ An autonomous, multi-skill suite for the **Integration Architect** lifecycle. It
 ## 🛠 Skills Included
 
 1. **`integration-architect`**: The Master Orchestrator. Manages the 5-phase lifecycle.
-2. **`discovery-expert`**: Technical Source understanding (Word/CSV to OpenAPI/Schema Map).
+2. **`discovery-expert`**: Technical Source understanding (Word/PowerPoint/Excel/CSV to OpenAPI/Schema Map).
 3. **`ui-analyzer`**: User Target understanding (Figma/Screenshot to UI Spec).
 4. **`contract-designer`**: The Bridge (Optimized OpenAPI & TypeScript Types).
 5. **`data-aligner`**: Persistence Layer (DB Gap Analysis & SQL Alignment).
@@ -33,7 +33,7 @@ ln -s $(pwd)/integration-architect-agent/skills/discovery-expert .agents/skills/
 
 These skills are **Self-Healing**. The agent will automatically attempt to install the following if missing:
 - **Python 3.12+**
-- **Libraries:** `pandas`, `mammoth`, `python-docx`
+- **Libraries:** `pandas`, `mammoth`, `python-docx`, `python-pptx`, `openpyxl`, `pyyaml`
 
 ### Figma MCP Setup
 To enable high-fidelity UI analysis, you need to configure the **Figma MCP Server**. Since the Antigravity CLI (`agy`) scans the workspace root, this configuration **must** be placed in `.agents/mcp_config.json` at the root of your project (not inside `./discovery/`).
@@ -60,7 +60,7 @@ Create the file `.agents/mcp_config.json` in the root of your project:
 ## 📂 Workspace Structure
 
 ### User-Created Input Folders (Must be set up before running):
-- `./discovery/`: Place your legacy API docs (`.docx`) and database schema exports (`.csv`) here.
+- `./discovery/`: Place your legacy API docs (`.docx`, `.pptx`, `.xlsx`) and database schema exports (`.csv`) here.
 - `./ui_analysis/screenshots/`: Place UI mockups/screenshots here (if not using the Figma MCP server).
 
 ### Agent-Created Output Folders (Created automatically at runtime):
