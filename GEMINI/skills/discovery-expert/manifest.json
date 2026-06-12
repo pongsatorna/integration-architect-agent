@@ -1,0 +1,25 @@
+{
+  "skill_name": "discovery_expert",
+  "version": "1.0.0",
+  "description": "Trigger this skill to ingest, sanitize, and analyze technical sources (Upstream APIs and Databases). Use when you have: 1. Legacy API docs (.docx) that need conversion to OpenAPI 3.0. 2. Database table exports (.csv) that need mapping. 3. Existing mobile API contracts that need review. DO NOT use for: Designing new mobile contracts or analyzing UI screens. REQUIRES: .docx or .csv files in the /discovery folder.",
+  "entrypoint": {
+    "instructions_file": "./instructions.md"
+  },
+  "tools": [
+    {
+      "name": "doc_converter",
+      "type": "compute_tool",
+      "file_path": "./tools/doc_converter.py",
+      "description": "Python script to convert .docx files into clean Markdown for high-fidelity API extraction."
+    },
+    {
+      "name": "db_indexer",
+      "type": "compute_tool",
+      "file_path": "./tools/db_indexer.py",
+      "description": "Python script to automatically index CSV files and generate a database schema map."
+    }
+  ],
+  "runtime_directives": {
+    "output_convention": "OpenAPI files must use kebab-case (e.g., account-service-v1.yaml). All YAML must be valid OAS 3.0."
+  }
+}

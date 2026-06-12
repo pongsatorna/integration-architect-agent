@@ -1,0 +1,19 @@
+#### Tool 2: `security_checklist.json`
+*This acts as an automated security review. The AI will check every mapped field against this list.*
+
+```json
+{
+  "forbidden_field_patterns": [
+    ".*password.*",
+    ".*salt.*",
+    ".*hash.*",
+    "^internal_.*",
+    ".*_db_id$",
+    "ssn",
+    "social_security"
+  ],
+  "masking_rules": {
+    "creditCardNumber": "Mask all but last 4 digits",
+    "emailAddress": "Return full email only if profile page, otherwise mask"
+  }
+}

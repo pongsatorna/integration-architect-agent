@@ -1,0 +1,27 @@
+{
+  "skill_name": "ui_analyzer",
+  "version": "1.0.0",
+  "description": "Primary skill for Target Requirement Discovery. Trigger when analyzing mobile UI designs (Figma URLs or Screenshots) to define what data the frontend needs. Use for: 1. Extracting data fields, types, and states from Figma nodes. 2. Identifying repeating list structures and pagination needs. 3. Mapping UI logic (e.g., conditional visibility) to API flags. DO NOT use for: Designing backend APIs or analyzing existing legacy documentation. REQUIRES: Figma URL (preferred) or Screenshot.",
+  "entrypoint": {
+    "instructions_file": "./instructions.md"
+  },
+  "tools": [
+    {
+      "name": "figma_node_parser",
+      "type": "compute_tool",
+      "file_path": "./tools/figma_node_parser.py",
+      "description": "Python script to flatten complex Figma JSON node trees into a simplified list of data fields and UI states."
+    },
+    {
+      "name": "ui_state_matrix",
+      "type": "reference_document",
+      "file_path": "./tools/ui_state_matrix.md",
+      "description": "Checklist of mandatory mobile states (No Data, Error, Loading, Success) to ensure the API contract is robust."
+    }
+  ],
+  "runtime_directives": {
+    "prioritize_mcp": true,
+    "fallback_to_vision": true,
+    "description": "Always attempt to use the Figma MCP server first to get structured node data. Only use vision-based screenshot analysis as a fallback or for secondary visual context."
+  }
+}

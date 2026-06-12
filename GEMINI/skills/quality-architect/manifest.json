@@ -1,0 +1,27 @@
+{
+  "skill_name": "quality_architect",
+  "version": "1.0.0",
+  "description": "Trigger this skill to design automated API tests, load tests, and mockup responses. Use for: 1. Generating Postman collections for automated testing. 2. Designing K6 load test scripts. 3. Creating multi-scenario mock responses (200, 400, 500). DO NOT use for: Designing API contracts or DB schemas. REQUIRES: ./contracts/specs/ OpenAPI YAML file.",
+  "entrypoint": {
+    "instructions_file": "./instructions.md"
+  },
+  "tools": [
+    {
+      "name": "postman_template",
+      "type": "reference_document",
+      "file_path": "./tools/postman_template.json",
+      "description": "Base JSON structure for generating Postman collections with built-in test scripts for status codes and schema validation."
+    },
+    {
+      "name": "k6_load_test_template",
+      "type": "reference_document",
+      "file_path": "./tools/k6_template.js",
+      "description": "Standardized K6 script template including Virtual User (VU) stages and threshold checks (p95 < 500ms)."
+    }
+  ],
+  "runtime_directives": {
+    "testing_tool": "Postman",
+    "load_testing_tool": "K6",
+    "mocking_format": "JSON"
+  }
+}

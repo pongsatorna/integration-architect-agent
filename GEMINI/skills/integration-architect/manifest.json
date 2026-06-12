@@ -1,0 +1,21 @@
+{
+  "skill_name": "integration_architect",
+  "version": "1.0.0",
+  "description": "The Master Orchestrator for the entire Integration Lifecycle. Trigger this skill for projects involving mobile API design, legacy system integration, or data transformations. Use to coordinate: Discovery, UI Analysis, Contract Design, Database Alignment, and Quality Verification. REQUIRES: Access to the /skills directory.",
+  "entrypoint": {
+    "instructions_file": "./instructions.md"
+  },
+  "tools": [
+    {
+      "name": "integration_lifecycle_roadmap",
+      "type": "reference_document",
+      "file_path": "./tools/lifecycle_roadmap.md",
+      "description": "Visual map of the 5-phase integration workflow and hand-off points."
+    }
+  ],
+  "runtime_directives": {
+    "role": "Orchestrator",
+    "workflow": "Sequential & Composable",
+    "description": "The Orchestrator does not do the low-level work. It identifies the current phase and delegates to the specialized sub-skills (discovery_expert, ui_analyzer, etc.)."
+  }
+}
