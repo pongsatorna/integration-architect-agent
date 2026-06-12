@@ -37,12 +37,15 @@ These skills are **Self-Healing**. The agent will automatically attempt to insta
 To enable high-fidelity UI analysis, ensure you have the **Figma MCP Server** configured with your `FIGMA_ACCESS_TOKEN`.
 
 ## 📂 Workspace Structure
-The skills expect and will create the following folders in your project:
-- `./discovery/`: Legacy docs and DB exports.
-- `./ui_analysis/`: Figma raw data and screenshots.
-- `./contracts/`: Final OpenAPI specs and TypeScript types.
-- `./database/`: SQL alignment scripts.
-- `./testing/`: Postman collections and K6 scripts.
+
+### User-Created Input Folders (Must be set up before running):
+- `./discovery/`: Place your legacy API docs (`.docx`) and database schema exports (`.csv`) here.
+- `./ui_analysis/screenshots/`: Place UI mockups/screenshots here (if not using the Figma MCP server).
+
+### Agent-Created Output Folders (Created automatically at runtime):
+- `./contracts/`: Final OpenAPI specs, TypeScript types, and lineage maps.
+- `./database/`: SQL alignment scripts and database migration plans.
+- `./testing/`: Postman collections, K6 load test scripts, and mock response JSONs.
 
 ---
 **Build with ❤️ for Integration Architects.**
