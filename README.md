@@ -36,7 +36,26 @@ These skills are **Self-Healing**. The agent will automatically attempt to insta
 - **Libraries:** `pandas`, `mammoth`, `python-docx`
 
 ### Figma MCP Setup
-To enable high-fidelity UI analysis, ensure you have the **Figma MCP Server** configured with your `FIGMA_ACCESS_TOKEN`.
+To enable high-fidelity UI analysis, you need to configure the **Figma MCP Server**. Since the Antigravity CLI (`agy`) scans the workspace root, this configuration **must** be placed in `.agents/mcp_config.json` at the root of your project (not inside `./discovery/`).
+
+Create the file `.agents/mcp_config.json` in the root of your project:
+```json
+{
+  "mcpServers": {
+    "figma": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-figma"
+      ],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "YOUR_FIGMA_PERSONAL_ACCESS_TOKEN"
+      }
+    }
+  }
+}
+```
+*Note: Replace `YOUR_FIGMA_PERSONAL_ACCESS_TOKEN` with your actual Figma Personal Access Token.*
 
 ## 📂 Workspace Structure
 
