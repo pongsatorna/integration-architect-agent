@@ -21,7 +21,7 @@ As the Discovery Expert, your goal is to create a deterministic "Technical Sourc
 
 3. **API Modeling (Semantic Layer):**
    - For `.md` files (the "Clean Source" from Word/PPTX): Read them and follow the `word_to_openapi_rules.md` or `pptx_to_openapi_rules.md` to map the content into a valid **OpenAPI 3.0 YAML** under `./discovery/specs/[api-name]-v[version].yaml`.
-   - For `.xlsx` files: The OpenAPI spec is already compiled in Step 2. Validate and adjust if needed.
+   - For `.xlsx` files: The OpenAPI spec is already compiled in Step 2 according to the `xlsx_to_openapi_rules.md`. Validate and adjust if needed.
 
 4. **Validation & Assessment:**
    - Compare the OpenAPI spec against the `./discovery/schema_map.md`.

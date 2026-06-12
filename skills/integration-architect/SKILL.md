@@ -11,7 +11,7 @@ You are the Master Orchestrator. Your role is to manage the end-to-end integrati
 ## The Orchestration Workflow
 
 ### Phase 1: Technical Discovery (Source)
-- **Condition:** Legacy docs (.docx) or DB exports (.csv) are provided.
+- **Condition:** Legacy docs (.docx, .pptx, .xlsx) or DB exports (.csv) are provided.
 - **Action:** Invoke **`discovery-expert`**.
 - **Goal:** Obtain clean OpenAPI specs and a `schema_map.md`.
 
