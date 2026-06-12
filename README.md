@@ -13,11 +13,19 @@ An autonomous, multi-skill suite for the **Integration Architect** lifecycle. It
 
 ## 📦 Installation
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/[your-org]/integration-architect-agent.git
-   ```
-2. Point your Gemini CLI to this directory as an extension.
+### Option 1: Full Suite (Recommended)
+To install the entire suite of 6 skills with one command:
+```bash
+gemini extensions install https://github.com/pongsatorna/integration-architect-agent
+```
+
+### Option 2: Individual Skills
+To install specific skills using the `skills` command:
+```bash
+gemini skills install https://github.com/pongsatorna/integration-architect-agent --path skills/integration-architect
+gemini skills install https://github.com/pongsatorna/integration-architect-agent --path skills/discovery-expert
+# etc...
+```
 
 ## ⚙️ Prerequisites
 

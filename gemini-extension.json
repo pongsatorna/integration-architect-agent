@@ -1,0 +1,7 @@
+{
+  "name": "integration-architect-agent",
+  "version": "1.0.0",
+  "description": "Deterministic end-to-end suite for Integration Architecture, API Contract Design, and DB Alignment.",
+  "author": "Pongsatorn",
+  "contextFileName": "GEMINI.md"
+}
