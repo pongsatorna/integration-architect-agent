@@ -1,2 +1,5 @@
 .DS_Store
 .kiro
+discovery/*.xlsx
+discovery/*.xls
+discovery/specs/
