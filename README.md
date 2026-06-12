@@ -13,17 +13,19 @@ An autonomous, multi-skill suite for the **Integration Architect** lifecycle. It
 
 ## 📦 Installation
 
-### Option 1: Full Suite (Recommended)
-To install the entire suite of 6 skills with one command:
+### Option 1: Full Suite (Recommended via Antigravity CLI)
+To install the entire suite of skills as an Antigravity plugin:
 ```bash
-gemini extensions install https://github.com/pongsatorna/integration-architect-agent
+agy plugin install https://github.com/pongsatorna/integration-architect-agent
 ```
 
 ### Option 2: Individual Skills
-To install specific skills using the `skills` command:
+Since `gemini skills install` is deprecated, you can manually clone the repository and symlink specific skills to your local workspace's `.agents/skills/` directory:
 ```bash
-gemini skills install https://github.com/pongsatorna/integration-architect-agent --path skills/integration-architect
-gemini skills install https://github.com/pongsatorna/integration-architect-agent --path skills/discovery-expert
+git clone https://github.com/pongsatorna/integration-architect-agent.git
+mkdir -p .agents/skills
+ln -s $(pwd)/integration-architect-agent/skills/integration-architect .agents/skills/
+ln -s $(pwd)/integration-architect-agent/skills/discovery-expert .agents/skills/
 # etc...
 ```
 
