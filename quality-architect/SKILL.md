@@ -1,3 +1,9 @@
+---
+name: quality-architect
+description: Designs automated API tests (Postman), load tests (K6), and mockup responses.
+version: 1.0.0
+---
+
 # Execution Playbook: Quality Architect
 
 As the Quality Architect, your goal is to verify the contract and enable the frontend team with data and tests.

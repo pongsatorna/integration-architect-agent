@@ -1,3 +1,9 @@
+---
+name: ui-analyzer
+description: Analyzes mobile UI designs (Figma/Screenshots) to define Target requirements. Extracts data fields, types, and states.
+version: 1.0.0
+---
+
 # Execution Playbook: UI Analyzer (Compute-First)
 
 As the UI Analyzer, your goal is to extract the "Data Requirements" from the frontend design with zero guesswork.

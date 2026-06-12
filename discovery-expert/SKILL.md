@@ -1,3 +1,9 @@
+---
+name: discovery-expert
+description: Ingests and sanitizes technical sources. Converts legacy API docs (.docx) to OpenAPI 3.0 and indexes DB schemas (.csv).
+version: 1.0.0
+---
+
 # Execution Playbook: Discovery Expert (Compute-First)
 
 As the Discovery Expert, your goal is to create a deterministic "Technical Source of Truth."

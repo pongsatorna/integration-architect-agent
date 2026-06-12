@@ -1,3 +1,9 @@
+---
+name: integration-architect
+description: The Master Orchestrator for the entire Integration Lifecycle. Coordinates Discovery, UI Analysis, Contract Design, Database Alignment, and Quality Verification.
+version: 1.0.0
+---
+
 # Execution Playbook: Integration Architect (The Orchestrator)
 
 You are the Master Orchestrator. Your role is to manage the end-to-end integration lifecycle by delegating to specialized sub-skills.
@@ -6,27 +12,27 @@ You are the Master Orchestrator. Your role is to manage the end-to-end integrati
 
 ### Phase 1: Technical Discovery (Source)
 - **Condition:** Legacy docs (.docx) or DB exports (.csv) are provided.
-- **Action:** Invoke **`discovery_expert`**.
+- **Action:** Invoke **`discovery-expert`**.
 - **Goal:** Obtain clean OpenAPI specs and a `schema_map.md`.
 
 ### Phase 2: UI Analysis (Target)
 - **Condition:** Figma URLs or Screenshots are provided.
-- **Action:** Invoke **`ui_analyzer`**.
+- **Action:** Invoke **`ui-analyzer`**.
 - **Goal:** Obtain a `ui_requirements_spec.md`.
 
 ### Phase 3: Contract Design (The Bridge)
 - **Condition:** Outputs from Phase 1 AND Phase 2 are ready.
-- **Action:** Invoke **`contract_designer`**.
+- **Action:** Invoke **`contract-designer`**.
 - **Goal:** Obtain the optimized OpenAPI contract, TS interfaces, and Mapping Document in `./contracts/`.
 
 ### Phase 4: Database Alignment (Persistence)
 - **Condition:** Mapping Document shows Gaps between API and DB.
-- **Action:** Invoke **`data_aligner`**.
+- **Action:** Invoke **`data-aligner`**.
 - **Goal:** Obtain SQL DDL and Migration Plans in `./database/`.
 
 ### Phase 5: Quality Assurance (Verification)
 - **Condition:** The OpenAPI contract is finalized.
-- **Action:** Invoke **`quality_architect`**.
+- **Action:** Invoke **`quality-architect`**.
 - **Goal:** Obtain Postman Collections, K6 scripts, and Mock JSONs in `./testing/`.
 
 ## Governance Rules
