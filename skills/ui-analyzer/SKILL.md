@@ -16,8 +16,10 @@ As the UI Analyzer, your goal is to extract the "Data Requirements" from the fro
 
 2. **Deterministic Extraction (Figma MCP Path):**
    - Run `python3 ./tools/figma_node_parser.py ./ui_analysis/raw_mcp/figma_raw.json ./ui_analysis/ui_data_map.json`.
-   - Review the output `./ui_analysis/ui_data_map.json`. It will list:
-     - Component Names (to be used as API keys).
+   - Run `python3 ./tools/figma_screen_extractor.py ./ui_analysis/raw_mcp/figma_raw.json ./ui_analysis/screen_sections_map.json` to extract a structured hierarchy of screens, their constituent sections, and UI fields.
+   - **Upstream Source mapping**: The `screen_sections_map.json` leaves the `"upstream_source": ""` property blank. You must review the JSON and specify the upstream system/API pulling data for each section before proceeding.
+   - Review the output `./ui_analysis/ui_data_map.json` and `./ui_analysis/screen_sections_map.json`. These list:
+     - Component/Section Names (to be mapped to APIs).
      - Text content (to identify data types).
      - Hidden/Optional layers (to identify nullable fields).
      - Repeating elements (to identify arrays and pagination).
