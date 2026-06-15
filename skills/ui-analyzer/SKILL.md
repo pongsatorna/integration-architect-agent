@@ -40,7 +40,7 @@ As the UI Analyzer, your goal is to extract "Data Requirements" from the fronten
     *   Identify dynamic fields vs static text, data types, and API trigger buttons.
 
 6.  **State Mapping:**
-    *   Consult [ui_state_matrix.md](file:///Users/superneung/Documents/code/agent-creation/integration-architect-agent/skills/ui-analyzer/tools/ui_state_matrix.md) to define:
+    *   Consult [ui_state_matrix.md](./tools/ui_state_matrix.md) to define:
         *   Error states, empty states, and loading states for each section.
 
 7.  **Output Generation:**
