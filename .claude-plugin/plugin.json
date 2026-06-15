@@ -1,0 +1,8 @@
+{
+  "name": "integration-architect",
+  "version": "1.0.0",
+  "description": "Deterministic end-to-end suite for Integration Architecture: API Contract Design, DB Alignment, and Quality Verification. Bridges legacy systems to modern mobile frontends.",
+  "author": {
+    "name": "Pongsatorn"
+  }
+}

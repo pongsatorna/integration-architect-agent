@@ -13,14 +13,31 @@ An autonomous, multi-skill suite for the **Integration Architect** lifecycle. It
 
 ## 📦 Installation
 
-### Option 1: Full Suite (Recommended via Antigravity CLI)
+### Option A: Claude Code Plugin (Recommended)
+Install directly within Claude Code using the `/plugin` command:
+```
+/plugin install https://github.com/pongsatorna/integration-architect-agent
+```
+
+After installation, use the `/integrate` slash command to start the lifecycle:
+```
+/integrate              # Run full 5-phase lifecycle
+/integrate discovery    # Start from a specific phase
+```
+
+**Figma MCP Setup:** Set your Figma token as an environment variable:
+```bash
+export FIGMA_ACCESS_TOKEN="your-figma-personal-access-token"
+```
+
+### Option B: Antigravity CLI (Gemini)
 To install the entire suite of skills as an Antigravity plugin:
 ```bash
 agy plugin install https://github.com/pongsatorna/integration-architect-agent
 ```
 
-### Option 2: Individual Skills
-Since `gemini skills install` is deprecated, you can manually clone the repository and symlink specific skills to your local workspace's `.agents/skills/` directory:
+### Option C: Individual Skills (Manual)
+Clone the repository and symlink specific skills to your local workspace:
 ```bash
 git clone https://github.com/pongsatorna/integration-architect-agent.git
 mkdir -p .agents/skills
@@ -36,7 +53,14 @@ These skills are **Self-Healing**. The agent will automatically attempt to insta
 - **Libraries:** `pandas`, `mammoth`, `python-docx`, `python-pptx`, `openpyxl`, `pyyaml`
 
 ### Figma MCP Setup
-To enable high-fidelity UI analysis, you need to configure the **Figma MCP Server**. Since the Antigravity CLI (`agy`) scans the workspace root, this configuration **must** be placed in `.agents/mcp_config.json` at the root of your project (not inside `./discovery/`).
+To enable high-fidelity UI analysis, you need to configure the **Figma MCP Server**.
+
+**For Claude Code (Option A):** The `.mcp.json` is bundled with the plugin — just set the environment variable:
+```bash
+export FIGMA_ACCESS_TOKEN="your-figma-personal-access-token"
+```
+
+**For Antigravity/Gemini (Option B):** Since the Antigravity CLI (`agy`) scans the workspace root, this configuration **must** be placed in `.agents/mcp_config.json` at the root of your project (not inside `./discovery/`).
 
 Create the file `.agents/mcp_config.json` in the root of your project:
 ```json
